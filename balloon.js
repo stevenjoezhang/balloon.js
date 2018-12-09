@@ -39,7 +39,7 @@
 	function balloonSrc(color) {
 		return "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 166 577' style='enable-background:new 0 0 166 577;'>\
 		<style>\
-			.st0 { fill:" + color + "; }\
+			.st0 { fill: " + color + "; }\
 			.st1 { fill: none; stroke: #AEAEAE; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }\
 		</style>\
 		<g>\
@@ -52,13 +52,13 @@
 	}
 	function balloon(xi, yi, xf, yf, index) {
 		var img = new Image(),
-			rule = "@keyframes fly-" + index + " { 0% { left: " + xi + "px; top: " + yi + "px; transform: scale(0.8); } 100% { left: " + xf + "px; top: " + yf + "px; transform: scale(1.2); } }";
+			rule = `@keyframes fly-${index} { 0% { left: ${xi}px; top: ${yi}px; transform: scale(0.8); } 100% { left: ${xf}px; top: ${yf}px; transform: scale(1.2); } }`;
 		style.innerHTML += rule;
 		img.src = "data:image/svg+xml," + balloonSrc(colors[index % colors.length]);
 		img.onload = function() {
 			document.body.appendChild(img);
 		};
-		img.style.cssText = "animation: fly-" + index++ + " " + duration * (0.9 + 0.2 * Math.random()) + "s ease-out forwards; position: fixed; width: " + size + "px";
+		img.style.cssText = `animation: fly-${index++} ${duration * (0.9 + 0.2 * Math.random())}s ease-out forwards; position: fixed; width: ${size}px`;
 	}
 	function randomPos(flag) {
 		if (from == false && to == true) return window.innerWidth - size * (1 + Math.random());

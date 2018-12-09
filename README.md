@@ -9,6 +9,7 @@ Multi-color balloons expanding and flying up from the bottom of your screen.
 - You do not have to be a web developer to use it.
 
 ## How to use
+
 Download:
 ```bash
 # Clone this repository
@@ -23,6 +24,11 @@ then add this script to your html page:
 or:
 ```xml
 <script src="path/to/balloon.min.js"></script>
+```
+
+### Using CDN
+```xml
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/balloon.js/balloon.min.js"></script>
 ```
 
 ## Config
