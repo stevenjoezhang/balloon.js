@@ -2,6 +2,11 @@
 
 Multi-color balloons expanding and flying up from the bottom of your screen.
 
+**WARNING: DO NOT SUPPORT IE.**
+
+## Preview
+![image](sample.png)
+
 ## Feature
 - Do not depend on jQuery.
 - Small size, less than 4Kb.
@@ -42,9 +47,6 @@ For example:
 ```xml
 <script src="path/to/balloon.min.js" duration="15" size="88"></script>
 ```
-
-## Preview
-![image](sample.png)
 
 ## Credits
 * [Mimi](https://zhangshuqiao.org) Developer of this project.
