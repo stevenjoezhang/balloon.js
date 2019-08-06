@@ -26,7 +26,9 @@
 	var scripts = document.getElementsByTagName("script"),
 		script = scripts[scripts.length - 1],
 		duration = script.getAttribute("duration") || 15,
+		delta = script.getAttribute("delta") || 0.5,
 		size = script.getAttribute("size") || 88,
+		opacity = script.getAttribute("opacity") || 0.9,
 		count = script.getAttribute("count") || 10,
 		from = script.getAttribute("from") == "l",
 		to = script.getAttribute("to") == "r",
@@ -52,13 +54,26 @@
 	}
 	function balloon(xi, yi, xf, yf, index) {
 		var img = new Image(),
-			rule = `@keyframes fly-${index} { from { left: ${xi}px; top: ${yi}px; transform: scale(0.8); } to { left: ${xf}px; top: ${yf}px; transform: scale(1.2); } }`;
+			rule = `@keyframes fly-${index} {
+				from {
+					left: ${xi}px;
+					top: ${yi}px;
+					transform: scale(0.8);
+				}
+				to {
+					left: ${xf}px;
+					top: ${yf}px;
+					transform: scale(1.2);
+				}
+			}`;
 		style.innerHTML += rule;
 		img.src = "data:image/svg+xml," + encodeURIComponent(balloonSrc(colors[index % colors.length]));
 		img.onload = function() {
-			document.body.appendChild(img);
+			setTimeout(function() {
+				document.body.appendChild(img);
+			}, index * i);
 		};
-		img.style.cssText = `animation: fly-${index++} ${duration * (0.9 + 0.2 * Math.random())}s ease-out forwards; position: fixed; width: ${size}px`;
+		img.style.cssText = `animation: fly-${index++} ${duration * (0.9 + 0.2 * Math.random())}s ease-out forwards; position: fixed; width: ${size}px; opacity: ${opacity};`;
 	}
 	function randomPos(flag) {
 		if (from == false && to == true) {
