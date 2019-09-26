@@ -5,9 +5,11 @@ Multi-color balloons expanding and flying up from the bottom of your screen.
 **WARNING: DO NOT SUPPORT IE.**
 
 ## Preview
+
 ![image](sample.png)
 
 ## Feature
+
 - Do not depend on jQuery.
 - Small size, less than 4Kb.
 - Easy to implement, simple configuration.
@@ -32,11 +34,13 @@ or:
 ```
 
 ### Using CDN
+
 ```xml
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/balloon.js/balloon.min.js"></script>
 ```
 
 ## Config
+
 - `duration` the animation duration in seconds
 - `size` size of the balloons in px
 - `count` count of the balloons
@@ -49,11 +53,14 @@ For example:
 ```
 
 ## Credits
+
 * [Mimi](https://zhangshuqiao.org) Developer of this project.
 
 ## License
+
 Released under the GNU General Public License v3  
 http://www.gnu.org/licenses/gpl-3.0.html
 
 ## TODO
+
 - Relative size
