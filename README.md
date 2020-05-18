@@ -6,11 +6,12 @@ Multi-color balloons expanding and flying up from the bottom of your screen.
 
 ## Preview
 
-![image](sample.png)
+![Preview](sample.png)
+[Preview Link](https://mi.js.org/balloon.js/sample.html)
 
 ## Feature
 
-- Do not depend on jQuery.
+- No jQuery.
 - Small size, less than 4Kb.
 - Easy to implement, simple configuration.
 - You do not have to be a web developer to use it.
