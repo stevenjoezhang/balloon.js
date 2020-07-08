@@ -1,0 +1,22 @@
+{
+  "name": "balloon.js",
+  "version": "0.0.1",
+  "description": "Multi-color balloons expanding and flying up from the bottom of your screen.",
+  "main": "balloon.js",
+  "scripts": {
+    "build": "terser balloon.js -o balloon.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenjoezhang/balloon.js.git"
+  },
+  "author": "Mimi <stevenjoezhang@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/stevenjoezhang/balloon.js/issues"
+  },
+  "homepage": "https://github.com/stevenjoezhang/balloon.js#readme",
+  "devDependencies": {
+    "terser": "^4.8.0"
+  }
+}

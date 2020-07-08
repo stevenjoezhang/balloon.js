@@ -19,11 +19,7 @@
 
 (function() {
 
-	Array.prototype.shuffle = function() {
-		for (var j, x, i = this.length; i; j = parseInt(Math.random() * i), x = this[--i], this[i] = this[j], this[j] = x);
-		return this;
-	};
-	var scripts = document.getElementsByTagName("script"),
+	const scripts = document.getElementsByTagName("script"),
 		script = scripts[scripts.length - 1],
 		duration = script.getAttribute("duration") || 15,
 		delta = script.getAttribute("delta") || 0.5,
@@ -32,7 +28,7 @@
 		count = script.getAttribute("count") || 10,
 		from = script.getAttribute("from") == "l",
 		to = script.getAttribute("to") == "r",
-		colors = ["#DB3236", "#3CBA54", "#4885ED", "#F4C20D"].shuffle(),
+		colors = ["#DB3236", "#3CBA54", "#4885ED", "#F4C20D"].sort(() => Math.random() - 0.5),
 		style = document.createElement("style");
 
 	style.innerHTML = "";
@@ -53,7 +49,7 @@
 	</svg>`;
 	}
 	function balloon(xi, yi, xf, yf, index) {
-		var img = new Image(),
+		const img = new Image(),
 			rule = `@keyframes fly-${index} {
 				from {
 					left: ${xi}px;
@@ -71,7 +67,7 @@
 		img.onload = function() {
 			setTimeout(function() {
 				document.body.appendChild(img);
-			}, index * i);
+			}, index * count);
 		};
 		img.style.cssText = `animation: fly-${index++} ${duration * (0.9 + 0.2 * Math.random())}s ease-out forwards; position: fixed; width: ${size}px; opacity: ${opacity};`;
 	}
@@ -86,7 +82,7 @@
 			return window.innerWidth * to + 8 * size * Math.random() * (from ? 1 : -1);
 		}
 	}
-	for (var i = 0; i < count; i++) {
+	for (let i = 0; i < count; i++) {
 		new balloon(randomPos(true), window.innerHeight + size * 577 / 166 * Math.random(), randomPos(), -size * 577 / 166 * (1 + Math.random()), i);
 	}
 })();
