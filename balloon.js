@@ -78,9 +78,8 @@
 			return size * Math.random();
 		} else if (flag) {
 			return window.innerWidth * !from + 8 * size * Math.random() * (to ? -1 : 1);
-		} else {
-			return window.innerWidth * to + 8 * size * Math.random() * (from ? 1 : -1);
 		}
+		return window.innerWidth * to + 8 * size * Math.random() * (from ? 1 : -1);
 	}
 	for (let i = 0; i < count; i++) {
 		new balloon(randomPos(true), window.innerHeight + size * 577 / 166 * Math.random(), randomPos(), -size * 577 / 166 * (1 + Math.random()), i);

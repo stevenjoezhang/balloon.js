@@ -37,7 +37,7 @@ or:
 ### Using CDN
 
 ```xml
-<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/balloon.js/balloon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/balloon.js@0/balloon.min.js"></script>
 ```
 
 ## Config
