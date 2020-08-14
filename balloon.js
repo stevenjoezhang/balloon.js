@@ -19,8 +19,7 @@
 
 (function() {
 
-	const scripts = document.getElementsByTagName("script"),
-		script = scripts[scripts.length - 1],
+	const script = document.currentScript,
 		duration = script.getAttribute("duration") || 15,
 		delta = script.getAttribute("delta") || 0.5,
 		size = script.getAttribute("size") || 88,
