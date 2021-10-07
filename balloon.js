@@ -30,7 +30,18 @@
 		colors = ["#DB3236", "#3CBA54", "#4885ED", "#F4C20D"].sort(() => Math.random() - 0.5),
 		style = document.createElement("style");
 
-	style.innerHTML = "";
+	style.innerHTML = `@keyframes fly {
+		from {
+			left: var(--xi);
+			top: var(--yi);
+			transform: scale(0.8);
+		}
+		to {
+			left: var(--xf);
+			top: var(--yf);
+			transform: scale(1.2);
+		}
+	}`;
 	document.head.appendChild(style);
 
 	function balloonSrc(color) {
@@ -48,27 +59,14 @@
 	</svg>`;
 	}
 	function balloon(xi, yi, xf, yf, index) {
-		const img = new Image(),
-			rule = `@keyframes fly-${index} {
-				from {
-					left: ${xi}px;
-					top: ${yi}px;
-					transform: scale(0.8);
-				}
-				to {
-					left: ${xf}px;
-					top: ${yf}px;
-					transform: scale(1.2);
-				}
-			}`;
-		style.innerHTML += rule;
+		const img = new Image();
 		img.src = "data:image/svg+xml," + encodeURIComponent(balloonSrc(colors[index % colors.length]));
 		img.onload = function() {
 			setTimeout(function() {
 				document.body.appendChild(img);
 			}, index * count);
 		};
-		img.style.cssText = `animation: fly-${index++} ${duration * (0.9 + 0.2 * Math.random())}s ease-out forwards; position: fixed; width: ${size}px; opacity: ${opacity};`;
+		img.style.cssText = `animation: fly ${duration * (0.9 + 0.2 * Math.random())}s ease-out forwards; position: fixed; width: ${size}px; opacity: ${opacity}; --xi: ${xi}px; --yi: ${yi}px; --xf: ${xf}px; --yf: ${yf}px;`;
 	}
 	function randomPos(flag) {
 		if (from == false && to == true) {
@@ -81,6 +79,6 @@
 		return window.innerWidth * to + 8 * size * Math.random() * (from ? 1 : -1);
 	}
 	for (let i = 0; i < count; i++) {
-		new balloon(randomPos(true), window.innerHeight + size * 577 / 166 * Math.random(), randomPos(), -size * 577 / 166 * (1 + Math.random()), i);
+		balloon(randomPos(true), window.innerHeight + size * 577 / 166 * Math.random(), randomPos(), -size * 577 / 166 * (1 + Math.random()), i);
 	}
 })();
