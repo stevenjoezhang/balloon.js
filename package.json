@@ -1,6 +1,6 @@
 {
   "name": "balloon.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Multi-color balloons expanding and flying up from the bottom of your screen.",
   "main": "balloon.js",
   "scripts": {
