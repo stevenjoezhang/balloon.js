@@ -7,7 +7,7 @@ Multi-color balloons expanding and flying up from the bottom of your screen.
 ## Preview
 
 ![Preview](sample.png)
-[Preview Link](https://mi.js.org/balloon.js/sample.html)
+[Preview Link](https://stevenjoezhang.github.io/balloon.js/sample.html)
 
 ## Feature
 
